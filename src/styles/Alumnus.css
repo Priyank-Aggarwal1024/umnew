@@ -1,0 +1,108 @@
+.alumnus-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.alumnus-heading {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 111%;
+    max-width: 800px;
+    /* 72.15px */
+}
+
+.alumnus-top-right {
+    display: flex;
+    width: 122px;
+    height: 56px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+}
+
+.alumnus-btn-circle-gray {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all;
+    transition-duration: 50ms;
+    cursor: pointer;
+}
+
+.alumnus-btn-circle-gray:hover {
+    background-color: #49D043;
+    filter: drop-shadow(0px 4px 15px rgba(73, 208, 67, 0.68));
+
+}
+
+.alumnus-container {
+    width: 100%;
+    padding-top: 47px;
+}
+
+@media(width<1024px) {
+    .alumnus-heading {
+        font-size: 55px;
+    }
+}
+
+@media(width<768px) {
+    .alumnus-heading {
+        font-size: 45px;
+    }
+
+    .alumnus-btn-circle-gray {
+        width: 45px;
+        height: 45px;
+    }
+
+    .alumnus-container {
+        padding-top: 36px;
+    }
+
+    .alumnus-top-right {
+        margin-bottom: 0;
+        align-items: end;
+    }
+}
+
+@media(width<580px) {
+    .alumnus-heading {
+        font-size: 36px;
+    }
+
+    .alumnus-btn-circle-gray {
+        width: 33.049px;
+        height: 33.049px;
+        flex-shrink: 0;
+    }
+
+    .alumnus-container {
+        padding-top: 26px;
+    }
+
+    .alumnus-top-right {
+        width: 72px;
+        height: 33.049px;
+    }
+}
+
+@media(width<420px) {
+    .alumnus-heading {
+        font-size: 30px;
+    }
+}
+
+@media(width<374px) {}

@@ -1,0 +1,60 @@
+.courses {
+    /* max-width: 1201px; */
+    width: 100%;
+}
+
+.courses-heading {
+    padding-bottom: 56px;
+}
+
+.courses-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.courses-main-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 24px;
+    align-items: start;
+}
+
+.courses-main-cards-inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 16px;
+}
+
+
+
+@media(width<1280px) {
+    .courses-main-cards-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(width<798px) {
+    .courses-main-cards-inner {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 14px;
+    }
+
+    .courses-heading {
+        padding-bottom: 43px;
+    }
+}
+
+@media(width<580px) {
+    .courses-main-cards {
+        gap: 21px;
+    }
+}
+
+@media(width<420px) {}
+
+@media(width<374px) {}

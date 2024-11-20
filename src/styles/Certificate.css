@@ -1,0 +1,43 @@
+.certificate-para {
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 136%;
+    /* 27.2px */
+    opacity: 0.7;
+    padding-top: 11px;
+    padding-bottom: 45px;
+    max-width: 734px;
+}
+
+.certificate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificate-img {
+    max-width: 100%;
+}
+
+@media(width<768px) {
+    .certificate-para {
+        font-size: 17px;
+        padding-top: 12px;
+        padding-bottom: 22px;
+
+    }
+
+    .certificate {
+        padding-top: 20px;
+    }
+}
+
+@media(width<580px) {
+    .certificate-para {
+        font-size: 14px;
+    }
+}

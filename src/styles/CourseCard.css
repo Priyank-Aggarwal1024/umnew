@@ -1,0 +1,71 @@
+.course-card {
+    display: flex;
+    padding: 21px 25px;
+    height: 100px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #181A18;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.07);
+    justify-content: space-between;
+}
+
+.course-card-left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.course-cl-icon {
+    width: 54px;
+    height: 55.286px;
+}
+
+.card-cl-text {
+    color: #FFF;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.course-card-right {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1px;
+    cursor: pointer;
+}
+
+.course-cr-view {
+    color: #49D043;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.14px;
+}
+
+@media(width<580px) {
+    .course-cr-view {
+        font-size: 13px;
+    }
+
+    .course-cr-view-img {
+        width: 28.361px;
+        height: 28.361px;
+        flex-shrink: 0;
+    }
+
+    .course-card {
+        height: 88.6px;
+        padding: 18px 15px;
+    }
+
+    .course-cl-icon {
+        width: 47.859px;
+        height: 47.859px;
+    }
+}

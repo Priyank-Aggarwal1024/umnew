@@ -1,0 +1,115 @@
+.card1 {
+    border-radius: 10.698px;
+    background: #252525;
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+    max-width: 354.621px;
+}
+
+.card1-bottom {
+
+    width: 100%;
+}
+
+.card1-name {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 24.962px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 111%;
+    /* 27.708px */
+}
+
+.card1-position {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 17.889px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 70%;
+    /* 12.522px */
+    padding-top: 13px;
+    padding-bottom: 25px;
+}
+
+.card1-company {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 17.889px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70%;
+    /* 12.522px */
+}
+
+.card1-image {
+    width: 100%;
+}
+
+.card1-image>img {
+    width: 100%;
+    aspect-ratio: 319.159/392.262;
+}
+
+
+@media(width<1024px) {
+    .card1-name {
+        font-size: 19px;
+    }
+
+    .card1-position {
+        font-size: 14px;
+    }
+
+    .card1-company {
+        font-size: 14px;
+    }
+}
+
+@media(width<768px) {
+    .card1-name {
+        font-size: 16px;
+    }
+
+    .card1-position {
+        font-size: 12px;
+        padding-top: 7px;
+        padding-bottom: 14px;
+    }
+
+    .card1-company {
+        font-size: 12px;
+    }
+
+    .card1 {
+        padding: 14px;
+    }
+}
+
+@media(width<580px) {
+    .card1-name {
+        font-size: 14px;
+    }
+
+    .card1-position {
+        font-size: 10px;
+    }
+
+    .card1-company {
+        font-size: 10px;
+    }
+
+    .card1 {
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+}
+
+@media(width<420px) {}
+
+@media(width<374px) {}
