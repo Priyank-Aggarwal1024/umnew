@@ -52,6 +52,17 @@
 @media(width<580px) {
     .courses-main-cards {
         gap: 21px;
+
+    }
+
+    .courses-main-cards-inner {
+        display: flex;
+        overflow-y: auto;
+        /* overflow-x: hidden; */
+        gap: 9px;
+        padding-bottom: 14px;
+        scrollbar-color: #49D043 #181A18;
+
     }
 }
 

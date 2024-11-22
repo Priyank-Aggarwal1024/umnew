@@ -41,7 +41,7 @@ export const tech = [
     },
     {
         img: t3,
-        text: "Web Development with PHP / MySQL",
+        text: "Web Development with PHP",
         curriculum: "webdevelopment"
     },
     {
