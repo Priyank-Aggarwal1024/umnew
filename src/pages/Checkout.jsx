@@ -1,6 +1,5 @@
 import '../styles/Checkout.css'
 import logo from '../assets/logo.svg'
-import { Link } from 'react-router-dom';
 import ssl from '../assets/ssl.svg'
 import secure from '../assets/secure.svg'
 import razorpay from '../assets/razorpay.svg'
