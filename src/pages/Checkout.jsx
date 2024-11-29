@@ -4,24 +4,28 @@ import { Link } from 'react-router-dom';
 import ssl from '../assets/ssl.svg'
 import secure from '../assets/secure.svg'
 import razorpay from '../assets/razorpay.svg'
-import checkbox from '../assets/checkbox.png'
-import checkboxfilled from '../assets/checkbox-filled.png'
-import clock from '../assets/clock.svg'
 import { useState } from 'react';
 function Checkout() {
     const plans = [
         {
-            time: "Monthly",
-            price: "699"
+            time: "1 Month",
+            price: "99",
+            text: "One-time purchase plan"
         }, {
-            time: "Half year",
-            price: "2,796"
+            time: "3 Months",
+            price: "299",
+            text: "Standard price plan"
         }, {
-            time: "Annual",
-            price: "6,999"
+            time: "6 Months",
+            price: "589",
+            text: "Standard price plan"
+        }, {
+            time: "12 Months",
+            price: "299",
+            text: "Standard price plan"
         }
     ];
-    const [select, setSelect] = useState(0);
+    const [select, setSelect] = useState(2);
     const benefits = [
         "20+ Courses",
         "Resume Building",
@@ -40,21 +44,13 @@ function Checkout() {
                 <div className="checkout-navbar-para">Order Summary</div>
             </div>
             <div className="checkout-main">
-                <div className="checkout-heading-div">
-                    <Link to={"/"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                            <path d="M20.2504 10.9209H7.46335L10.0002 8.3841C10.2929 8.09155 10.4574 7.69472 10.4575 7.28089C10.4576 6.86707 10.2933 6.47016 10.0007 6.17748C9.70818 5.8848 9.31134 5.72031 8.89752 5.72021C8.4837 5.72012 8.08679 5.88441 7.79411 6.17696L4.06424 9.90683C3.38272 10.5902 3 11.516 3 12.4811C3 13.4463 3.38272 14.372 4.06424 15.0554L7.79411 18.7853C8.08679 19.0778 8.4837 19.2421 8.89752 19.242C9.31134 19.2419 9.70818 19.0775 10.0007 18.7848C10.2933 18.4921 10.4576 18.0952 10.4575 17.6814C10.4574 17.2675 10.2929 16.8707 10.0002 16.5782L7.46335 14.0413H20.2504C20.6642 14.0413 21.061 13.8769 21.3536 13.5843C21.6462 13.2918 21.8105 12.8949 21.8105 12.4811C21.8105 12.0673 21.6462 11.6705 21.3536 11.3779C21.061 11.0853 20.6642 10.9209 20.2504 10.9209Z" fill="#FFCF33" />
-                        </svg>
-                    </Link>
-                    <p className="checkout-heading">Checkout</p>
-                </div>
                 <div className="checkout-main-middle">
                     <div className="checkout-main-middle-inner">
                         <div className="checkout-main-left">
                             <div className="cml-top">
                                 <div className="">
                                     <p className="cml-top-onemembership">One Membership</p>
-                                    <p className="cml-top-unlimited">UNLIMITED BENIFITS</p>
+                                    <p className="cml-top-unlimited"> Learn, Build, Network & Earn</p>
                                 </div>
                                 <div className="checkout-benefits-outer">
                                     <div className="checkout-benefits">
@@ -62,15 +58,26 @@ function Checkout() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="cml-middle">
-                                <img src={clock} alt="Clock" />
-                                <p className="">Hurry! Limited Seats Available</p>
+                            <div className="cml-bottom-plans">
+                                {
+                                    plans.map((item, idx) => <div className={`cml-bottom-plan ${idx == select && "cml-bottom-plan-active"}`} key={idx} onClick={() => setSelect(idx)}>
+                                        <div className="cmlbp-left">
+                                            <div className="cmlbp-left-inner"></div>
+                                        </div>
+                                        <div className="cml-bp-right">
+                                            <div className="cml-bp-right-head">₹ {item.price} For {item.time}</div>
+                                            <div className="cml-bp-right-text">{item.text}</div>
+                                        </div>
+                                    </div>)
+                                }
                             </div>
+                        </div>
+                        <div className="checkout-main-right-outer">
                             <div className="cml-bottom">
                                 <div className="cml-bottom-para">Apply Coupon</div>
                                 <div className="cml-bottom-coupoun">
                                     {
-                                        apply ? <p>{coupoun}</p> : <input type='text' onChange={({ target }) => setCoupoun(target.value)} placeholder='Enter Coupon Code' className="coupoun-input" />
+                                        apply ? <p>{coupoun}</p> : <input type='text' onChange={({ target }) => setCoupoun(target.value)} placeholder='Apply Coupoun' className="coupoun-input" />
                                     }
                                     {
                                         apply ? <div className="coupoun-remove" onClick={() => { setApply(false); setCoupoun("") }}>Remove <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -79,42 +86,19 @@ function Checkout() {
                                     }
                                 </div>
                             </div>
-                        </div>
-                        <div className="checkout-main-right">
-                            <div className="checkout-right-top">
-                                <div className="payment-plan checkout-payment-plan">
-                                    <div className="payment-plan-popular">Most Popular</div>
-                                    <div className={`payment-plan-monthly ${select == 0 && "payment-plan-active"}`} onClick={() => setSelect(0)}>
-                                        {select == 0 ? <img src={checkboxfilled} alt="Checkbox Filled" /> : <img src={checkbox} alt="Checkbox" />}
-                                        <div className="payment-plan-para">
-                                            <p className="">{plans[0].time}</p>
-                                            <p className="payment-plan-span">(Rs {plans[0].price})</p>
-                                        </div>
+                            <div className="checkout-main-right">
+                                <div className="checkout-right-top">
+                                    <div className="checkout-right-top-detail">DETAILS</div>
+                                    <div className="checkout-plan-topay">
+                                        <p>{plans[select].time}</p>
+                                        <p>₹{plans[select].price}</p>
                                     </div>
-                                    <div className={`payment-plan-halfyearly ${select == 1 && "payment-plan-active"}`} onClick={() => setSelect(1)}>
-                                        {select == 1 ? <img src={checkboxfilled} alt="Checkbox Filled" /> : <img src={checkbox} alt="Checkbox" />}
-                                        <div className="payment-plan-para">
-                                            <p className="">{plans[1].time}</p>
-                                            <p className="payment-plan-span">(Rs {plans[1].price})</p>
-                                        </div>
-                                    </div>
-                                    <div className={`payment-plan-yearly ${select == 2 && "payment-plan-active"}`} onClick={() => setSelect(2)}>
-                                        {select == 2 ? <img src={checkboxfilled} alt="Checkbox Filled" /> : <img src={checkbox} alt="Checkbox" />}
-                                        <div className="payment-plan-para">
-                                            <p className="">{plans[2].time}</p>
-                                            <p className="payment-plan-span">(Rs {plans[2].price})</p>
-                                        </div>
-                                    </div>
+                                    <button className="btn green-btn checkout-join-btn">Join Now at ₹{plans[select].price}</button>
                                 </div>
-                                <div className="checkout-plan-topay">
-                                    <p>To Pay</p>
-                                    <p>₹{plans[select].price}</p>
-                                </div>
-                                <button className="btn green-btn checkout-join-btn">Join Now at ₹{plans[select].price}</button>
+                                <p className="hidden-charges">
+                                    No other Hidden Charges
+                                </p>
                             </div>
-                            <p className="hidden-charges">
-                                No other Hidden Charges
-                            </p>
                         </div>
                     </div>
                 </div>

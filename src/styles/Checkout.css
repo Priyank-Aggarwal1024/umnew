@@ -80,7 +80,7 @@
 
 .checkout-main-middle {
     width: 100%;
-    padding: 0 64px 24px 64px;
+    padding: 50px 64px 24px 64px;
 }
 
 .checkout-main-middle-inner {
@@ -103,6 +103,14 @@
 
 }
 
+.checkout-main-right-outer {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+
+}
+
 .checkout-main-right {
     display: flex;
     width: 494.712px;
@@ -120,7 +128,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 28.846px;
+    gap: 14px;
     align-self: stretch;
     width: 100%;
 }
@@ -130,20 +138,31 @@
 }
 
 .checkout-plan-topay {
-    padding-top: 40.385px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #FFF;
     text-align: right;
     font-family: Montserrat;
-    font-size: 30px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     width: 100%;
-    border-top: 1.442px solid rgba(255, 255, 255, 0.10);
+    padding-bottom: 10px;
+}
 
+.checkout-right-top-detail {
+    color: rgba(255, 255, 255, 0.65);
+    font-family: Montserrat;
+    font-size: 15.048px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.451px;
+    text-transform: capitalize;
+    text-align: left;
+    width: 100%;
 }
 
 .checkout-join-btn {
@@ -200,14 +219,13 @@
 }
 
 .cml-top-unlimited {
-    color: #FFF;
+    color: #FFB912;
     font-family: Montserrat;
     font-size: 30.497px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%;
+    line-height: 120%;
     /* 45.745px */
-    margin-top: -12px;
 }
 
 .checkout-benefits-outer {
@@ -344,22 +362,145 @@
     cursor: pointer;
 }
 
+.cml-bottom-plans {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 16px;
+    grid-auto-flow: column;
+}
+
+.cml-bottom-plan {
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0px 1px 1px #4ad0436b;
+    background: #121312;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    padding-right: 8px;
+}
+
+.cml-bp-right {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.cml-bp-right-head {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 19.371px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.581px;
+    text-transform: capitalize;
+}
+
+.cml-bp-right-text {
+    color: rgba(255, 255, 255, 0.65);
+    font-family: Montserrat;
+    font-size: 14.528px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.436px;
+    text-transform: capitalize;
+}
+
+.cmlbp-left {
+    cursor: pointer;
+    display: flex;
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    background: rgba(217, 217, 217, 0.17);
+
+}
+
+.cmlbp-left-inner {
+    width: 15.254px;
+    height: 15.254px;
+    border-radius: 50%;
+    background: rgba(217, 217, 217, 0.17);
+}
+
+.cml-bottom-plan-active .cmlbp-left {
+    background: rgba(255, 185, 18, 0.55);
+
+}
+
+.cml-bottom-plan-active .cmlbp-left-inner {
+    background: #FFB912;
+
+}
+
+@media (width<1280px) {
+    .cml-bottom-plan {
+        gap: 12px;
+    }
+}
+
 @media(width<1024px) {
     .checkout-main-middle-inner {
         flex-direction: column;
     }
 
+    .checkout-main-right-outer {
+        width: 100%;
+
+    }
+
     .checkout-main-middle {
-        padding: 0 32px 24px;
+        padding: 0;
+    }
+
+    .cml-bottom-plans {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        gap: 0;
+    }
+
+    .cml-bottom-plan {
+        padding: 15px 18px;
+        gap: 25px;
+        border-radius: 5px;
+        box-shadow: none;
+        border-bottom: 1px solid #4ad04327;
+
+    }
+
+    .cml-top {
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.08);
     }
 
     .checkout-main-right {
         width: 100%;
         gap: 16px;
+        border-radius: 8px;
+        background: #121312;
     }
 
     .checkout-main-left {
         max-width: 100%;
+        gap: 0;
+    }
+
+    .cml-bottom-para {
+        display: none;
+    }
+
+    .cml-bottom-coupoun {
+        border-radius: 8px;
+        background: #121312;
     }
 }
 
@@ -383,15 +524,26 @@
 
     }
 
+    .checkout-main-right {
+        gap: 10px;
+        padding: 21px 16px;
+    }
+
     .checkout-benefit {
         font-size: 12px;
         padding: 6px 10px;
-        border: 1px solid rgba(73, 208, 67, 0.05);
-        color: rgb(73, 208, 67, 0.7);
+        border-radius: 54.787px;
+        border: 1.096px solid rgba(73, 208, 67, 0.17);
+        background: rgba(73, 208, 67, 0.06);
+        color: #29BF12;
     }
 
     .checkout-main-middle-inner {
-        gap: 21px;
+        gap: 14px;
+    }
+
+    .checkout-main-right-outer {
+        gap: 14px;
     }
 
     .checkout-benefit {
@@ -399,17 +551,12 @@
 
     }
 
-    .checkout-main-left {
-        gap: 15px;
-    }
-
     .cml-top-onemembership {
         font-size: 18px;
     }
 
     .cml-top-unlimited {
-        font-size: 25px;
-        margin-top: -10px;
+        font-size: 22px;
     }
 
     .cml-top {
@@ -479,17 +626,20 @@
     }
 
     .checkout-plan-topay {
-        padding-top: 28px;
-        font-size: 22px;
+        font-size: 18px;
+        padding-bottom: 9px;
+    }
+
+    .checkout-right-top-detail {
+        font-size: 12px;
     }
 
     .checkout-right-top {
-        gap: 20px;
-
+        gap: 11px;
     }
 
     .checkout-main-middle {
-        padding: 0 16px 24px;
+        padding: 0;
     }
 
     .razorpay-img {
@@ -514,7 +664,16 @@
     .checkout-payment-plan>.payment-plan-popular {
         padding: 4px 7px;
     }
+
+    .cml-bp-right-head {
+        font-size: 16px;
+    }
+
+    .cml-bp-right-text {
+        font-size: 12px;
+    }
 }
+
 
 @media(width<580px) {
     .checkout-payment-plan>div {
@@ -528,10 +687,6 @@
     .checkout-payment-plan>.payment-plan-popular {
         padding: 2px 5px;
         bottom: 80%;
-    }
-
-    .checkout-main-left {
-        gap: 10px;
     }
 }
 
